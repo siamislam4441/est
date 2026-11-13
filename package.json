@@ -1,0 +1,13 @@
+{
+  "name": "my-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Modern Firebase-powered account and dashboard web application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
