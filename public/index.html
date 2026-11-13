@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Nova — Your workspace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast" role="status"></div>
+  <main id="authView" class="auth-shell">
+    <section class="auth-brand">
+      <div class="brand-mark">N</div>
+      <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+      <h1>Everything in<br><span>one place.</span></h1>
+      <p class="muted">A simple, secure space to manage your account, files, preferences and activity.</p>
+      <div class="auth-points"><span>✦ Secure account</span><span>✦ Personal dashboard</span><span>✦ Your settings, your way</span></div>
+    </section>
+    <section class="auth-card">
+      <div class="auth-tabs">
+        <button class="tab active" data-auth-tab="login">Login</button>
+        <button class="tab" data-auth-tab="register">Create account</button>
+      </div>
+      <form id="loginForm" class="auth-form">
+        <h2>Welcome back</h2><p class="muted">Sign in to continue to your workspace.</p>
+        <label>Email address<input id="loginEmail" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        <label>Password<div class="password-wrap"><input id="loginPassword" type="password" autocomplete="current-password" required minlength="6" placeholder="Your password"><button type="button" class="show-pass" data-toggle-password="loginPassword">Show</button></div></label>
+        <div class="form-row between"><label class="check"><input id="rememberMe" type="checkbox" checked> Remember me</label><button type="button" class="text-btn" id="forgotBtn">Forgot password?</button></div>
+        <button class="primary-btn" type="submit">Login <span>→</span></button>
+        <p class="form-note">New here? <button type="button" class="text-btn" data-auth-tab="register">Create an account</button></p>
+      </form>
+      <form id="registerForm" class="auth-form hidden">
+        <h2>Create your account</h2><p class="muted">It only takes a moment to get started.</p>
+        <label>Display name<input id="registerName" type="text" maxlength="50" required placeholder="Your name"></label>
+        <label>Email address<input id="registerEmail" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        <label>Password<div class="password-wrap"><input id="registerPassword" type="password" autocomplete="new-password" required minlength="8" placeholder="At least 8 characters"><button type="button" class="show-pass" data-toggle-password="registerPassword">Show</button></div></label>
+        <button class="primary-btn" type="submit">Create account <span>→</span></button>
+        <p class="form-note">By creating an account, you agree to use the service responsibly.</p>
+      </form>
+    </section>
+  </main>
+
+  <main id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#"><span class="brand-mark small">N</span><b>nova<span>.</span></b></a>
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active" data-page="overview">▦ <span>Overview</span></button>
+      <button class="nav-item" data-page="files">▤ <span>My files</span></button>
+      <button class="nav-item" data-page="activity">◷ <span>Activity</span></button>
+      <div class="side-label">PERSONAL</div>
+      <button class="nav-item" data-page="profile">◎ <span>My profile</span></button>
+      <button class="nav-item" data-page="settings">⚙ <span>Settings</span></button>
+      <button class="nav-item" data-page="security">◇ <span>Security</span></button>
+      <div class="sidebar-bottom"><div class="mini-user"><div class="avatar" id="sideAvatar">U</div><div><b id="sideName">User</b><small id="sideEmail">email</small></div></div><button id="logoutBtn" class="logout-btn">↪ Sign out</button></div>
+    </aside>
+    <section class="main-area">
+      <header class="topbar"><button id="menuBtn" class="icon-btn mobile-only">☰</button><div><span class="eyebrow">YOUR WORKSPACE</span><h2 id="pageHeading">Overview</h2></div><div class="top-actions"><button id="themeBtn" class="icon-btn" title="Toggle theme">◐</button><button id="notificationBtn" class="icon-btn" title="Notifications">♧</button><div class="avatar" id="topAvatar">U</div></div></header>
+      <div id="pageContent" class="content"></div>
+    </section>
+  </main>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
